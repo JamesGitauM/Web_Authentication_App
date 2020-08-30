@@ -24,13 +24,15 @@
             <a href="http://localhost:8000/admin/" class="nav-item nav-link active" tabindex="-1">Admin</a>
             <a href="{% url 'auth:info_page' %}" class="nav-item nav-link">Information Page</a>
             <a href="#" class="nav-item nav-link">Skill Development</a>
-            <a href="#" class="nav-item nav-link">Patients Documents</a>
+            <a href="{% url 'auth:test_page'  %}" class="nav-item nav-link">Patients Documents</a>
+
 
         </div>
 
          {% if user.is_authenticated  %}
          <div class="navbar-nav">
              <a href="{% url 'auth:edit_profile'  %}" class="nav-item nav-link">Edit  Profile</a>
+
          </div>
          <div class="navbar-nav">
              <a href="{% url 'auth:change_password'  %}" class="nav-item nav-link">Change Password</a>
@@ -38,6 +40,14 @@
          <div class="navbar-nav ml-auto">
              <a href="{% url 'auth:logout'  %}" class="nav-item nav-link">Logout</a>
          </div>
+         <ul class="navbar-nav ml-auto nav-flex-icons">
+     <li class="nav-item avatar">
+       <a class="nav-link p-0" href="#">
+         <img src="{{ user.profile.image.url }}" class="rounded-circle z-depth-0"
+           alt="avatar image" height="35">
+       </a>
+     </li>
+   </ul>
          {% else %}
 
         <div class="navbar-nav ml-auto">

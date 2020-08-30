@@ -13,6 +13,10 @@ def home(request):
 
     return render(request,'authenticate/landingpage.html',context)
 
+def test_page(request):
+    context={'posts':Patient_Diagnosis.objects.all()}
+    return render(request,'authenticate/diagnosis.html',context)
+
 def info_page(request):
     context={'posts':Post.objects.all()}
     return render(request,'authenticate/landingpage1.html',context)

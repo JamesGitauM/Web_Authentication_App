@@ -1,11 +1,9 @@
-from django.db import models
 
-# Create your models here.
 from django.db import models
 from django.contrib.auth.models import User
 
-class Profile(model.Model):
+class Profile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE)
-    image=model.ImageField(default='dafault.jpg',upload_to='profile_pics')
+    image=models.ImageField(default='dafault.jpg',upload_to='profile_pics')
     def __str__(self):
-        return f'{self.username}Profile'
+        return f'{self.user.username}Profile'
