@@ -13,9 +13,9 @@
   <div class="media-body">
     <div class="article-metadata">
     <a class="mr-2" href="#">{{ post.author }}</a>
-    <small class="test-muted">{{ post.date_posted }}</small>
+    <small class="test-muted">{{ post.date_posted |date:"F d,Y"}}</small>
     </div>
-    <h2 > <a class="article_title" href="#">{{ post.title }}</a></h2>
+    <h4 > <a class="article_title" href="#">{{ post.title }}</a></h4>
     <p class="article-content">{{ post.content }}</p>
 
   </div>
