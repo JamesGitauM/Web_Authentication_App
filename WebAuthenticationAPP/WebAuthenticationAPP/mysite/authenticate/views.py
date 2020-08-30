@@ -4,11 +4,19 @@ from django.contrib.auth.forms import UserCreationForm,UserChangeForm, PasswordC
 from django.http import HttpResponse
 from django.contrib import messages
 from authenticate.forms import SignUpForm,EditProfileForm
+from .models import *
 
 # Create your views here.
 
 def home(request):
-    return render(request,'authenticate/base2.html',{})
+    context={'posts':Post.objects.all()}
+
+    return render(request,'authenticate/landingpage.html',context)
+
+def info_page(request):
+    context={'posts':Post.objects.all()}
+    return render(request,'authenticate/landingpage1.html',context)
+
 
 def showbase(request):
     return render(request, 'authenticate/base2.html',{'samurai':'is a garbage car'})

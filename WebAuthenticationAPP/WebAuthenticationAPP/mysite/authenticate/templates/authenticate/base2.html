@@ -11,7 +11,7 @@
 
 
    <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a href="#" class="navbar-brand">Auth Web App</a>
+    <a href="#" class="navbar-brand">Afya Yetu</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,6 +22,10 @@
             <a href="#" class="nav-item nav-link">Profile</a>
             <a href="#" class="nav-item nav-link">Messages</a>
             <a href="http://localhost:8000/admin/" class="nav-item nav-link active" tabindex="-1">Admin</a>
+            <a href="{% url 'auth:info_page' %}" class="nav-item nav-link">Information Page</a>
+            <a href="#" class="nav-item nav-link">Skill Development</a>
+            <a href="#" class="nav-item nav-link">Patients Documents</a>
+
         </div>
 
          {% if user.is_authenticated  %}
